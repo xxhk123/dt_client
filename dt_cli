@@ -295,7 +295,7 @@ echo "" > /etc/pihole/adlists.list
 cat << EOF > /etc/pihole/setupVars.conf
 PIHOLE_INTERFACE=$eth_n
 IPV4_ADDRESS=$loc_ip/24
-PIHOLE_DNS_1=127.0.0.1#5599
+PIHOLE_DNS_1=127.0.0.1#5598
 PIHOLE_DNS_2=
 QUERY_LOGGING=true
 INSTALL_WEB_SERVER=true
