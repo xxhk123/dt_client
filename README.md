@@ -20,7 +20,7 @@ apt install wget -y
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/pzwsquare/dt_client/master/dt_cli)
 </code>
 </p>
-<img src="https://raw.githubusercontent.com/pzwsquare/dt_client/master/dt_cli/re/index.png">
+<img src="https://raw.githubusercontent.com/pzwsquare/dt_client/master/re/index.png">
 </p>
 
 
