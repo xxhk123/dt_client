@@ -415,7 +415,7 @@ install_tropxy(){
     done
 
     while [[ -z ${svr_pwd} ]]; do
-        svr_pwd=$(whiptail --inputbox --nocancel "trojan服务器域名" 8 78 --title "输入域名" 3>&1 1>&2 2>&3)
+        svr_pwd=$(whiptail --inputbox --nocancel "trojan服务器密码" 8 78 --title "输入密码" 3>&1 1>&2 2>&3)
     done
 
 cd ~
