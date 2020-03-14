@@ -15,6 +15,7 @@ Youtube频道地址：https://t.im/n21o
 <code>
 apt install wget -y
 </code>
+</p>
 <code>
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/pzwsquare/dt_client/master/dt_cli)
 </code>
