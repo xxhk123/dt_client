@@ -6,9 +6,9 @@ Youtube：米月
 
 Youtube频道地址：https://t.im/n21o
 
-----------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
 <h1>只支持debian10系统</h1>
-----------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
 </p>
 <h1>灯塔客户端：</h1>
 </p>
@@ -17,10 +17,10 @@ apt install wget -y
 </code>
 </p>
 <code>
-bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/pzwsquare/dt_client/master/dt_cli)
+bash <(wget --no-check-certificate -qO- https://git.io/JvisK)
 </code>
 </p>
-<img src="https://raw.githubusercontent.com/pzwsquare/dt_client/master/re/index.png">
+<img src="https://git.io/JvisM/index.png">
 </p>
 
 
