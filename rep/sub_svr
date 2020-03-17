@@ -1,1 +1,47 @@
+#!/bin/bash
 
+while [[ -z ${svr_domain} ]]; do
+    svr_domain=$(whiptail --inputbox --nocancel "灯塔服务端域名" 8 78 --title "输入域名" 3>&1 1>&2 2>&3)
+done
+
+while [[ -z ${svr_pwd} ]]; do
+    svr_pwd=$(whiptail --inputbox --nocancel "灯塔服务端密码" 8 78 --title "输入密码" 3>&1 1>&2 2>&3)
+done
+
+cat << EOF > /usr/local/etc/trojan/config.json
+{
+    "run_type": "client",
+    "local_addr": "127.0.0.1",
+    "local_port": 1080,
+    "remote_addr": "$svr_domain",
+    "remote_port": 443,
+    "password": [
+        "$svr_pwd"
+    ],
+    "log_level": 1,
+    "ssl": {
+        "verify": true,
+        "verify_hostname": true,
+        "cert": "",
+        "cipher": "ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES128-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA:AES128-SHA:AES256-SHA:DES-CBC3-SHA",
+        "cipher_tls13": "TLS_AES_128_GCM_SHA256:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_256_GCM_SHA384",
+        "sni": "$svr_domain",
+        "alpn": [
+            "h2",
+            "http/1.1"
+        ],
+        "reuse_session": true,
+        "session_ticket": false,
+        "curves": ""
+    },
+    "tcp": {
+        "no_delay": true,
+        "keep_alive": true,
+        "reuse_port": false,
+        "fast_open": false,
+        "fast_open_qlen": 20
+    }
+}
+EOF
+
+    systemctl restart trojan > /dev/null 2>&1
