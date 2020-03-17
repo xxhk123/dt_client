@@ -44,4 +44,4 @@ cat << EOF > /usr/local/etc/trojan/config.json
 }
 EOF
 
-    systemctl restart trojan > /dev/null 2>&1
+systemctl restart trojan > /dev/null 2>&1
