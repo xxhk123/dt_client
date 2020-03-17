@@ -400,7 +400,7 @@ EOF
 }
 
 replace_svr(){
-  bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/pzwsquare/dt_client/master/rep/sbu_svr)
+  bash <(wget --no-check-certificate -qO- https://git.io/JvPph)
 }
 
 
@@ -506,6 +506,19 @@ DNS上游修改地址：/etc/smartdns/smartdns.conf
         clear
         ;;
         2)
+        replace_svr
+                whiptail --title "灯塔服务端更换成功" --msgbox "
+*************************************************************************
+灯塔服务端更换成功。
+
+更换后灯塔服务端域名：$svr_domain
+更换后灯塔服务端密码：$svr_pwd
+Youtube：米月
+电报群：https://t.me/mi_yue
+Youtube频道地址：https://t.im/n21o
+DNS上游修改地址：/etc/smartdns/smartdns.conf
+*************************************************************************" 18 78
+        clear
         ;;
         3)
         ;;
