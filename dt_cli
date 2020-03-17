@@ -22,9 +22,6 @@ systemctl stop iptables-proxy > /dev/null 2>&1
 modprobe xt_TPROXY
 echo "xt_TPROXY" > '/etc/modules-load.d/TPROXY.conf'
 
-echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
-echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
-
 cat << EOF > /etc/security/limits.conf
 * soft nofile 1000000
 * hard nofile 1000000
@@ -63,15 +60,17 @@ net.core.rmem_max = 8388608
 net.core.wmem_max = 8388608
 net.core.somaxconn = 32768
 net.core.netdev_max_backlog = 32768
+net.core.default_qdisc=fq
+net.ipv4.tcp_congestion_control=bbr
 EOF
 
 sysctl -p
 
 sed -i '/ip6-/d' /etc/hosts
 
-systemctl mask --now systemd-resolved > /dev/null 2>&1
-systemctl daemon-reload > /dev/null 2>&1
-rm -rf /run/resolvconf/interface/systemd-resolved
+# systemctl mask --now systemd-resolved > /dev/null 2>&1
+# systemctl daemon-reload > /dev/null 2>&1
+# rm -rf /run/resolvconf/interface/systemd-resolved
 
 }
 
