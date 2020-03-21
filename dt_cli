@@ -533,7 +533,7 @@ set_ip_dns
 
 dt_menu() {
 
-    Mainmenu=$(whiptail --clear --ok-button "确定" --backtitle "version:20200321v1" --title "灯塔客户端v2.0" --menu --nocancel "
+    Mainmenu=$(whiptail --clear --ok-button "确定" --backtitle "version:20200321v2" --title "灯塔客户端v2.0" --menu --nocancel "
 **********************************************************************************
 简介：灯塔客户端v2.0
 系统：>=debian9
