@@ -396,7 +396,7 @@ iptables -t mangle -A V2RAY -p udp --dport 5599 -j ACCEPT
 iptables -t mangle -A V2RAY -d 127.0.0.1/32 -j RETURN
 iptables -t mangle -A V2RAY -d 224.0.0.0/4 -j RETURN 
 iptables -t mangle -A V2RAY -d 255.255.255.255/32 -j RETURN 
-iptables -t mangle -A V2RAY -d $jy_ip/16 -p tcp -j RETURN
+# iptables -t mangle -A V2RAY -d $jy_ip/16 -p tcp -j RETURN
 iptables -t mangle -A V2RAY -d $jy_ip/16 -p udp ! --dport 53 -j RETURN
 iptables -t mangle -A V2RAY -p udp -j TPROXY --on-port 12345 --tproxy-mark 0x9
 iptables -t mangle -A V2RAY -p tcp -j TPROXY --on-port 12345 --tproxy-mark 0x9
@@ -523,7 +523,7 @@ set_ip_dns
 
 dt_menu() {
 
-    Mainmenu=$(whiptail --clear --ok-button "确定" --backtitle "version:20200320v1" --title "灯塔客户端v2.0" --menu --nocancel "
+    Mainmenu=$(whiptail --clear --ok-button "确定" --backtitle "version:20200321v1" --title "灯塔客户端v2.0" --menu --nocancel "
 **********************************************************************************
 简介：灯塔客户端v2.0
 系统：>=debian9
