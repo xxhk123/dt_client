@@ -363,8 +363,9 @@ pihole restartdns
 
 install_Iptables_Proxy(){
 
+temp_ip=(${loc_ip//./ })
 
-jy_ip=${loc_ip%.*}".0"
+jy_ip=${temp_ip[0]}"."${temp_ip[1]}".0.0"
 
 cat << EOF > /usr/local/bin/iptables_proxy
 #!/bin/bash
@@ -372,16 +373,16 @@ cat << EOF > /usr/local/bin/iptables_proxy
 ip rule add fwmark 0x9 table 100 pref 100
 ip route add local 0.0.0.0/0 dev lo table 100
 
-iptables -A INPUT -p tcp --tcp-flags ALL NONE -j DROP
+# iptables -A INPUT -p tcp --tcp-flags ALL NONE -j DROP
 # iptables -A INPUT -p tcp --tcp-flags RST RST -j DROP
 
-iptables -A INPUT -p tcp --dport 53 -s 127.0.0.1,172.17.0.0/24,172.16.66.0/24 -j ACCEPT
-iptables -A INPUT -p udp --dport 53 -s 127.0.0.1,172.17.0.0/24,172.16.66.0/24 -j ACCEPT
+# iptables -A INPUT -p tcp --dport 53 -s 127.0.0.1,172.17.0.0/24,172.16.66.0/24 -j ACCEPT
+# iptables -A INPUT -p udp --dport 53 -s 127.0.0.1,172.17.0.0/24,172.16.66.0/24 -j ACCEPT
 
-iptables -A INPUT -p tcp --dport 5598 -i $eth_n -j DROP
-iptables -A INPUT -p udp --dport 5598 -i $eth_n -j DROP
-iptables -A INPUT -p tcp --dport 5599 -i $eth_n -j DROP
-iptables -A INPUT -p udp --dport 5599 -i $eth_n -j DROP
+# iptables -A INPUT -p tcp --dport 5598 -i $eth_n -j DROP
+# iptables -A INPUT -p udp --dport 5598 -i $eth_n -j DROP
+# iptables -A INPUT -p tcp --dport 5599 -i $eth_n -j DROP
+# iptables -A INPUT -p udp --dport 5599 -i $eth_n -j DROP
 
 # 代理局域网设备
 iptables -t mangle -N V2RAY
