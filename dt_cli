@@ -256,34 +256,44 @@ cat << EOF > /etc/v2ray/config.json
      {
        "address": "127.0.0.1",
        "port": 5598,
-       "domains": [
-         "geosite:cn"
-       ],
-       "expectIPs": [
-         "geoip:cn"
-       ]
+       "domains": ["geosite:cn"],
+       "expectIPs": ["geoip:cn"]
      },
      {
        "address": "127.0.0.1",
        "port": 5599,
-       "domains": [
-         "geosite:geolocation-!cn"
-        // "geosite:speedtest",
-        // "ext:h2y.dat:gfw"
-       ]
+       "domains": ["geosite:geolocation-!cn"]
      },
      "localhost"
    ]
   },
-  "routing": {
-    "domainStrategy": "UseIP",
+   "routing": {
+    "domainStrategy": "IPOnDemand",
     "rules": [
-      {"type":"field","inboundTag":"transparent","outboundTag":"dns-out","network":"udp"},
-      {"type":"field","outboundTag":"direct","ip":"127.0.0.1"},
-      {"type":"field","ip":"127.0.0.1","outboundTag": "proxy"},
-       //切换全局 
-      {"type":"field","ip":["geoip:private","geoip:cn"],"outboundTag":"direct"},
-      {"type":"field","domain":["geosite:cn"],"outboundTag":"direct"}
+      {
+        "type":"field",
+        "inboundTag":"transparent",
+        "outboundTag":"dns-out",
+        "network":"udp"
+      },
+      // 第一条规则 freedom 的 tag 中国大陆网站
+      {
+        "type": "field",
+        "outboundTag": "direct",
+        "domain": ["geosite:cn"]
+      },
+      // 第二条规则 freedom 的 tag中国大陆 IP
+      {
+        "type": "field",
+        "outboundTag": "direct",
+        "ip": ["geoip:cn","geoip:private"]
+        },
+      // 第三条规则
+      {
+        "type": "field",
+        "outboundTag": "proxy",
+        "network": "udp,tcp"
+      }  
     ]
   }
 }
