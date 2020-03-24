@@ -1585,7 +1585,7 @@ Youtube频道地址：https://t.im/n21o
 Youtube：米月
 电报群：https://t.me/mi_yue
 Youtube频道地址：https://t.im/n21o
-灯塔web页面:http://$loc_ip/:9090/ui/
+灯塔web页面:http://$loc_ip:9090/ui/
 DNS上游修改地址：/etc/smartdns/smartdns.conf
 灯塔客户端配置文件地址：/home/clash/.config/clash/config.yaml
 *************************************************************************" 18 78
