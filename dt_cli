@@ -148,7 +148,7 @@ dns:
 secret: miyue
 external-ui: dashboard
 Proxy:
-  - {name: $svr_domain, server: $svr_domain, port: 443, type: trojan, password: $svr_pwd}
+  - {name: $svr_domain, server: $svr_domain, port: 443, skip-cert-verify: true, type: trojan, password: $svr_pwd}
 Proxy Group:
   - name: 🔰 节点选择
     type: select
