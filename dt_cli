@@ -96,7 +96,6 @@ conf-file /etc/smartdns/gfw_domain.conf
 server 114.114.114.114
 server 223.5.5.5
 server 119.28.28.28
-server 1.1.1.1 -group GFW -exclude-default-group
 server-tcp 8.8.8.8 -group GFW -exclude-default-group
 server-tcp 8.8.4.4 -group GFW -exclude-default-group    
 EOF
