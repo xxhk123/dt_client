@@ -17,7 +17,7 @@ apt install wget -y
 </code>
 </p>
 <code>
-bash <(wget --no-check-certificate -qO- https://git.io/JvisK)
+bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/pzwsquare/dt_client/master/dt_cli)
 </code>
 </p>
 <img src="https://git.io/Jvis1">
