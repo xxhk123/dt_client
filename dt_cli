@@ -2930,7 +2930,7 @@ echo "14******************************************************************"
 }
 
 dt_menu() {
- Mainmenu=$(whiptail --clear --ok-button "确定" --backtitle "version:20200327v3" --title "灯塔客户端v3.0" --menu --nocancel "
+ Mainmenu=$(whiptail --clear --ok-button "确定" --backtitle "version:20200327v4" --title "灯塔客户端v3.0" --menu --nocancel "
 **********************************************************************************
 简介：灯塔客户端v3.0
 系统：Debian10
@@ -2941,7 +2941,7 @@ Youtube频道地址：https://t.im/n21o
 请选择需要安装的内容：
     " 22 86 5\
         "1" " 安装灯塔客户端(only trojan)"\
-        # "2" " 安装灯塔客户端(only v2ray)"\
+#        "2" " 安装灯塔客户端(only v2ray)"\
         "4" " 退出" 3>&1 1>&2 2>&3)
     case $Mainmenu in
         1)
