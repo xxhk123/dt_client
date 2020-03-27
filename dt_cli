@@ -2930,7 +2930,7 @@ echo "14******************************************************************"
 }
 
 dt_menu() {
- Mainmenu=$(whiptail --clear --ok-button "确定" --backtitle "version:20200327v2" --title "灯塔客户端v3.0" --menu --nocancel "
+ Mainmenu=$(whiptail --clear --ok-button "确定" --backtitle "version:20200327v3" --title "灯塔客户端v3.0" --menu --nocancel "
 **********************************************************************************
 简介：灯塔客户端v3.0
 系统：Debian10
