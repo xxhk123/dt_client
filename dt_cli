@@ -2942,7 +2942,7 @@ Youtube频道地址：https://t.im/n21o
 请选择需要安装的内容：
     " 22 86 5\
         "1" " 安装灯塔客户端(only trojan)"\
-#        "2" " 安装灯塔客户端(only v2ray)"\
+        "2" " 安装灯塔客户端(only v2ray)"\
         "4" " 退出" 3>&1 1>&2 2>&3)
     case $Mainmenu in
         1)
@@ -2964,7 +2964,7 @@ Youtube频道地址：https://t.im/n21o
 DNS上游修改地址：/etc/smartdns/smartdns.conf
 灯塔客户端配置文件地址：/home/clash/.config/clash/config.yaml
 *************************************************************************" 18 78
-        #clear
+        clear
         ;;
         2)
         dt_system_dep
