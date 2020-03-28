@@ -94,11 +94,11 @@ while [[ -z ${svr_domain} ]]; do
     svr_domain=$(whiptail --inputbox --nocancel "V2ray服务端域名" 8 78 --title "输入域名" 3>&1 1>&2 2>&3)
 done
 
-while [[ -z ${svr_domain} ]]; do
+while [[ -z ${svr_port} ]]; do
     svr_port=$(whiptail --inputbox --nocancel "V2ray服务端端口" 8 78 --title "输入端口" 3>&1 1>&2 2>&3)
 done
 
-while [[ -z ${svr_domain} ]]; do
+while [[ -z ${svr_uuid} ]]; do
     svr_uuid=$(whiptail --inputbox --nocancel "V2ray服务端UUID" 8 78 --title "输入UUID" 3>&1 1>&2 2>&3)
 done
 
@@ -2931,7 +2931,7 @@ echo "14******************************************************************"
 }
 
 dt_menu() {
- Mainmenu=$(whiptail --clear --ok-button "确定" --backtitle "version:20200327v4" --title "灯塔客户端v3.0" --menu --nocancel "
+ Mainmenu=$(whiptail --clear --ok-button "确定" --backtitle "version:20200328v1" --title "灯塔客户端v3.0" --menu --nocancel "
 **********************************************************************************
 简介：灯塔客户端v3.0
 系统：Debian10
