@@ -136,6 +136,10 @@ while [[ -z ${svr_alterid} ]]; do
     svr_alterid=$(whiptail --inputbox --nocancel "V2ray VPS的alterid" 8 78 --title "输入alterid" 3>&1 1>&2 2>&3)
 done
 
+while [[ -z ${svr_path} ]]; do
+    svr_path=$(whiptail --inputbox --nocancel "V2ray VPS的path" 8 78 --title "输入path" 3>&1 1>&2 2>&3)
+done
+
 }
 
 
@@ -1577,7 +1581,7 @@ dns:
 secret: miyue
 external-ui: dashboard
 Proxy:
-  - {name: $svr_domain, server: $svr_domain, port: $svr_port, type: vmess, uuid: $svr_uuid, alterId: $svr_alterid, cipher: auto, tls: false}
+  - {name: $svr_domain, server: $svr_domain, port: $svr_port, type: vmess, uuid: $svr_uuid, alterId: $svr_alterid, ws-path: $svr_path, cipher: auto, tls: false}
 Proxy Group:
   - name: 🔰 节点选择
     type: select
