@@ -71,11 +71,11 @@ while [[ -z ${gate_ip} ]]; do
 done
 
 while [[ -z ${svr_domain} ]]; do
-    svr_domain=$(whiptail --inputbox --nocancel "灯塔服务端域名" 8 78 --title "输入域名：（可以用公益节点来安装:bwg.ps9.win）" 3>&1 1>&2 2>&3)
+    svr_domain=$(whiptail --inputbox --nocancel "灯塔VPS域名" 8 78 --title "输入域名：（可以用公益节点来安装:bwg.ps9.win）" 3>&1 1>&2 2>&3)
 done
 
 while [[ -z ${svr_pwd} ]]; do
-    svr_pwd=$(whiptail --inputbox --nocancel "灯塔服务端密码" 8 78 --title "输入密码：（可以用公益节点密码：qwer4321）" 3>&1 1>&2 2>&3)
+    svr_pwd=$(whiptail --inputbox --nocancel "灯塔VPS密码" 8 78 --title "输入密码：（可以用公益节点密码：qwer4321）" 3>&1 1>&2 2>&3)
 done
 }
 
@@ -91,15 +91,19 @@ while [[ -z ${gate_ip} ]]; do
 done
 
 while [[ -z ${svr_domain} ]]; do
-    svr_domain=$(whiptail --inputbox --nocancel "V2ray服务端域名" 8 78 --title "输入域名" 3>&1 1>&2 2>&3)
+    svr_domain=$(whiptail --inputbox --nocancel "V2ray VPS域名" 8 78 --title "输入域名" 3>&1 1>&2 2>&3)
 done
 
 while [[ -z ${svr_port} ]]; do
-    svr_port=$(whiptail --inputbox --nocancel "V2ray服务端端口" 8 78 --title "输入端口" 3>&1 1>&2 2>&3)
+    svr_port=$(whiptail --inputbox --nocancel "V2ray VPS端口" 8 78 --title "输入端口" 3>&1 1>&2 2>&3)
 done
 
 while [[ -z ${svr_uuid} ]]; do
-    svr_uuid=$(whiptail --inputbox --nocancel "V2ray服务端UUID" 8 78 --title "输入UUID" 3>&1 1>&2 2>&3)
+    svr_uuid=$(whiptail --inputbox --nocancel "V2ray VPS的UUID" 8 78 --title "输入UUID" 3>&1 1>&2 2>&3)
+done
+
+while [[ -z ${svr_alterid} ]]; do
+    svr_alterid=$(whiptail --inputbox --nocancel "V2ray VPS的alterid" 8 78 --title "输入alterid" 3>&1 1>&2 2>&3)
 done
 
 }
@@ -1543,7 +1547,7 @@ dns:
 secret: miyue
 external-ui: dashboard
 Proxy:
-  - {name: $svr_domain, server: $svr_domain, port: $svr_port, type: vmess, uuid: $svr_uuid, alterId: 64, cipher: auto, tls: false}
+  - {name: $svr_domain, server: $svr_domain, port: $svr_port, type: vmess, uuid: $svr_uuid, alterId: $svr_alterid, cipher: auto, tls: false}
 Proxy Group:
   - name: 🔰 节点选择
     type: select
@@ -2931,9 +2935,9 @@ echo "14******************************************************************"
 }
 
 dt_menu() {
- Mainmenu=$(whiptail --clear --ok-button "确定" --backtitle "version:20200328v1" --title "灯塔客户端v3.0" --menu --nocancel "
+ Mainmenu=$(whiptail --clear --ok-button "确定" --backtitle "version:20200328v2" --title "灯塔客户端v3.1" --menu --nocancel "
 **********************************************************************************
-简介：灯塔客户端v3.0
+简介：灯塔客户端v3.1
 系统：Debian10
 Youtube：米月、Unicom
 电报群：https://t.me/mi_yue
