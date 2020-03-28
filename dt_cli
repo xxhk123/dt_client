@@ -2935,7 +2935,7 @@ echo "14******************************************************************"
 }
 
 dt_menu() {
- Mainmenu=$(whiptail --clear --ok-button "确定" --backtitle "version:20200328v2" --title "灯塔客户端v3.1" --menu --nocancel "
+ Mainmenu=$(whiptail --clear --ok-button "确定" --backtitle "version:20200328v3" --title "灯塔客户端v3.1" --menu --nocancel "
 **********************************************************************************
 简介：灯塔客户端v3.1
 系统：Debian10
@@ -2992,7 +2992,7 @@ Youtube频道地址：https://t.im/n21o
 DNS上游修改地址：/etc/smartdns/smartdns.conf
 灯塔客户端配置文件地址：/home/clash/.config/clash/config.yaml
 *************************************************************************" 18 78
-        # clear
+        clear
         ;;
         4)
         #exit
