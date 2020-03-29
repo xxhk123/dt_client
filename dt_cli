@@ -2939,7 +2939,7 @@ iptables -t nat -A clash -d 240.0.0.0/4 -j RETURN
 echo "8******************************************************************"
 # iptables -t nat -A clash -p tcp --dport 22 -d $loc_ip/24 -j ACCEPT
 # -A PREROUTING -p tcp -m multiport --sports 443,3389,1194 -j RETURN
-iptables -t nat -I PREROUTING -p tcp -m multiport --sports 443,3389,1194 -j RETURN
+iptables -t nat -I PREROUTING -p tcp -m multiport --sports 443,1194,3128,3389,3690,5000,5001 -j RETURN
 iptables -t nat -A clash -p tcp -j REDIRECT --to-ports 7892
 echo "9******************************************************************"
 iptables -t nat -A OUTPUT -p tcp -m owner ! --uid-owner clash -j REDIRECT --to-port 7892
@@ -2971,7 +2971,7 @@ echo "14******************************************************************"
 }
 
 dt_menu() {
- Mainmenu=$(whiptail --clear --ok-button "确定" --backtitle "version:20200329v1" --title "灯塔客户端v3.2" --menu --nocancel "
+ Mainmenu=$(whiptail --clear --ok-button "确定" --backtitle "version:20200329v2" --title "灯塔客户端v3.2" --menu --nocancel "
 **********************************************************************************
 简介：灯塔客户端v3.2
 系统：Debian10
