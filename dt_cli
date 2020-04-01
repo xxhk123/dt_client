@@ -100,13 +100,17 @@ while [[ -z ${gate_ip} ]]; do
     gate_ip=$(whiptail --inputbox --nocancel "输入网关IP（输入网关IP（ros的ip或者爱快ip）" 8 78 --title "输入域名" 3>&1 1>&2 2>&3)
 done
 
-while [[ -z ${svr_domain} ]]; do
-    svr_domain=$(whiptail --inputbox --nocancel "灯塔VPS域名" 8 78 --title "输入域名：（可以用公益节点来安装:bwg.ps9.win）" 3>&1 1>&2 2>&3)
-done
+# while [[ -z ${svr_domain} ]]; do
+#     svr_domain=$(whiptail --inputbox --nocancel "灯塔VPS域名" 8 78 --title "输入域名：（可以用公益节点来安装:bwg.ps9.win）" 3>&1 1>&2 2>&3)
+# done
 
-while [[ -z ${svr_pwd} ]]; do
-    svr_pwd=$(whiptail --inputbox --nocancel "灯塔VPS密码" 8 78 --title "输入密码：（可以用公益节点密码：qwer4321）" 3>&1 1>&2 2>&3)
-done
+svr_domain="bwg.ps9.win"
+
+# while [[ -z ${svr_pwd} ]]; do
+#     svr_pwd=$(whiptail --inputbox --nocancel "灯塔VPS密码" 8 78 --title "输入密码：（可以用公益节点密码：qwer4321）" 3>&1 1>&2 2>&3)
+# done
+
+svr_pwd="qwer4321"
 }
 
 
@@ -2981,8 +2985,7 @@ Youtube频道地址：https://t.im/n21o
 **********************************************************************************
 请选择需要安装的内容：
     " 22 86 5\
-        "1" " 安装灯塔客户端(only trojan)"\
-        "2" " 安装灯塔客户端(only v2ray)"\
+        "1" " 安装灯塔客户端"\
         "4" " 退出" 3>&1 1>&2 2>&3)
     case $Mainmenu in
         1)
