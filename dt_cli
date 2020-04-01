@@ -46,6 +46,9 @@ echo clash | sudo passwd clash --stdin  &>/dev/null
 
 apt update
 
+echo iptables-persistent iptables-persistent/autosave_v4 boolean true | debconf-set-selections
+echo iptables-persistent iptables-persistent/autosave_v6 boolean true | debconf-set-selections
+
 yes|apt -y install sudo supervisor iptables-persistent net-tools curl gzip unzip
 
 source /etc/profile
@@ -2975,9 +2978,9 @@ echo "14******************************************************************"
 }
 
 dt_menu() {
- Mainmenu=$(whiptail --clear --ok-button "确定" --backtitle "version:20200329v2" --title "灯塔客户端v3.2" --menu --nocancel "
+ Mainmenu=$(whiptail --clear --ok-button "确定" --backtitle "version:20200401v1" --title "灯塔客户端v3.3" --menu --nocancel "
 **********************************************************************************
-简介：灯塔客户端v3.2
+简介：灯塔客户端v3.3
 系统：Debian10
 Youtube：米月、Unicom
 电报群：https://t.me/mi_yue
