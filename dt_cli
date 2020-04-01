@@ -1622,9 +1622,9 @@ echo "14******************************************************************"
 }
 
 dt_menu() {
- Mainmenu=$(whiptail --clear --ok-button "确定" --backtitle "version:20200401v3" --title "灯塔客户端v3.3" --menu --nocancel "
+ Mainmenu=$(whiptail --clear --ok-button "确定" --backtitle "version:20200401v4" --title "灯塔客户端v4.0" --menu --nocancel "
 **********************************************************************************
-简介：灯塔客户端v3.3
+简介：灯塔客户端v4.0
 系统：Debian10
 Youtube：米月、Unicom
 电报群：https://t.me/mi_yue
